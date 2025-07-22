@@ -1,0 +1,24 @@
+html, body{
+    font-family: var(--font1-);
+    font-size: 1.756vh;
+}
+
+:root{
+    --font1-: 'Pretendard', sans-serif;
+    --font2-: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* header */
+
+#header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
