@@ -26,7 +26,6 @@ body{
 
 section{
     position: relative;
-    border-bottom: 1px solid #000;
 }
 
 section::after{
@@ -57,22 +56,26 @@ section:not(#main_about){
 
 .section_tit{
     font-size: 3.614vw;
-    line-height: 1.4;
 }
 
 /* btn_type1 */
 
 .btn_type1{
     position: relative;
-    width: max-content;
+    width: 9.063rem;
     overflow: hidden;
+    border: 1px solid #000;
+    transition: border-color 0.3s;
+}
+
+.btn_type1:hover{
+    border-color: #cb0a0a;
 }
 
 .btn_type1 a{
     display: block;
-    width: 9.063rem;
+    width: 100%;
     height: 2.813rem;
-    border: 1px solid #000;
     transition: all .3s;
 }
 
@@ -112,6 +115,26 @@ section:not(#main_about){
     background: #cb0a0a;
 }
 
+/* aniLineDeco */
+
+.aniLineDeco{
+    position: absolute;
+    background: #000;
+}
+
+.aniLineDeco:not(.type2){
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+}
+
+.aniLineDeco.type2{
+    left: 100%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+}
 
 /* header */
 
@@ -171,6 +194,7 @@ section:not(#main_about){
     color: #222;
     transition: all .4s ease;
     z-index: 2;
+    overflow: hidden;
 }
 
 .nav_floor1 > li:hover > a{
@@ -188,7 +212,7 @@ section:not(#main_about){
     transform-origin: bottom;
     width: 100%;
     height: 100%;
-    transition: all .4s ease;
+    transition: all .3s ease;
     background: #cb0a0a;
     z-index: -1;
 }
@@ -206,6 +230,7 @@ section:not(#main_about){
     width: 100%;
     padding: 1.125rem 1.25rem;
     border: 1px solid #000;
+    background: #fff;
 }
 
 .nav_floor2 > li{
@@ -328,7 +353,19 @@ section:not(#main_about){
     justify-content: flex-end;
 }
 
-.main_about_list > ul > li .rotateStarDeco img{
+.rotateStarDeco{
+    position: relative;
+    transform-origin: center;
+    animation: starDecoRotate 9s linear infinite;
+}
+
+@keyframes starDecoRotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.rotateStarDeco img{
     display: block;
     width: 5.422vw;
 }
@@ -405,7 +442,8 @@ section:not(#main_about){
     width: 100%;
     position: sticky;
     left: 0;
-    top: 3.125rem;
+    top: 9.063rem;
+    padding-bottom: 15px;
 }
 
 .main_music_tit_txt .section_tit{
@@ -413,6 +451,7 @@ section:not(#main_about){
 }
 
 .main_music_list_area{
+    position: relative;
     flex: 1;
 }
 
@@ -421,13 +460,29 @@ section:not(#main_about){
     flex-wrap: wrap;
 }
 
+.main_music_list li{
+    position: relative;
+    width: 50%;
+    padding-bottom: 2.5rem;
+}
+
+.main_music_list li:nth-child(odd):not(.wide){
+    padding-left: 1.563rem;
+}
+
+.main_music_list li:nth-child(even){
+    padding-right: 1.563rem;
+}
+
 .main_music_list li.wide{
     width: 100%;
+    margin-bottom: 1.875rem;
 }
 
 .main_music_list li a{
     position: relative;
     display: block;
+    height: max-content;
 }
 
 .mml_img{
@@ -454,21 +509,36 @@ section:not(#main_about){
     opacity: 1;
 }
 
+.main_music_list li .mml_img{
+    height: 31.325vw;
+}
+
+.main_music_list li:not(.wide) .aniLineDeco{
+    height: 31.325vw;
+}
+
 .main_music_list li.wide .mml_img{
     height: 36.747vw;
 }
 
-.main_music_list li .mml_img img{
+.mml_img img{
     width: 100%;
-
 }
 
-.main_music_list li .mml_img .parallax_img{
+.mml_img .parallax_img{
     position: absolute; 
     left: 50%;
     top: 50%;
+    height: 100%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
+}
+
+.mml_img .parallax_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .mml_img_desc{
@@ -502,8 +572,46 @@ section:not(#main_about){
 }
 
 .mml_img_desc strong{
-    text-transform: uppercase;
-    font-size: 1.446vw;
-    font-weight: 500;
+    font-size: max(1.4vw, 20px);
+    font-weight: 400;
     letter-spacing: max(-0.1vw, -0.3px);
+}
+
+.mml_img_desc span{
+    font-size: max(0.964vw, 15px);
+}
+
+.mml_desc{
+    width: 100%;
+    padding-top: 1.563rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mml_desc *{
+    color: #000;
+}
+
+.mml_desc strong{
+    font-size: max(1.4vw, 20px);
+    font-weight: 400;
+    letter-spacing: max(-0.2vw, -0.3px);
+    flex: 1;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.mml_desc span{
+    font-size: max(0.964vw, 15px);
+    font-weight: 300;
+}
+
+.main_news_tit{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
