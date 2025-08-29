@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mobile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +24,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js" integrity="sha512-kz526itdNcpyMs18TLPOhsnIeOIO1JywWKbbF77zR+ZKpZ4gwubXhwaURHpt5Se9AAqSK2j8ID0LnfXsB2Jkjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
 
 </head>
 <body>
@@ -111,42 +114,63 @@
                         <div class="main_about_list">
                             <ul>
                                 <li>
-                                    <div class="hideEffectBox hideUpEffect">
-                                        <div class="rotateStarDeco hideUpEffect">
-                                            <img src="./img/star.svg" alt="#">
+                                    <div class="hideEffectBox">
+                                        <div class="hideUpEffect">
+                                            <div class="rotateStarDeco">
+                                                <img src="./img/star.svg" alt="#">
+                                            </div>
+                                            <strong>Inspiration</strong>
                                         </div>
-                                        <strong>Inspiration</strong>
                                     </div>
                                 </li>
                                 <li>
-                                    <p>
-                                        <span>CPTZ is a leading art company, creating new</span>
-                                        <span>possibilities and heartfelt expressions across diverse fields.</span>
-                                        <span>We collaborate with visionary artists to inspire, connect,</span>
-                                        <span>and bring meaningful ideas to life.</span>
+                                    <p class="lineUpEffect">
+                                        <span class="lineUpTxtBox">
+                                            <span class="lineUpTxt">CPTZ is a leading art company, creating new</span>
+                                        </span>
+                                        <br>
+                                        <span class="lineUpTxtBox">
+                                            <span class="lineUpTxt">possibilities and heartfelt expressions across diverse fields.</span>
+                                        </span>
+                                        <br>
+                                        <span class="lineUpTxtBox">
+                                            <span class="lineUpTxt">We collaborate with visionary artists to inspire, connect,</span>
+                                        </span>
+                                        <br>
+                                        <span class="lineUpTxtBox">
+                                            <span class="lineUpTxt">and bring meaningful ideas to life.</span>
+                                        </span>
                                     </p>
-                                    <strong class="hideUpEffect">Without</strong>
+                                    <div class="hideEffectBox">
+                                        <div class="hideUpEffect">
+                                            <strong class="hideUpEffect">Without</strong>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li>
-                                    <div class="hideEffectBox hideUpEffect">
-                                        <strong>Boundaries</strong>
-                                        <div class="mal_img">
-                                            <div class="parallax_img">
-                                                <img src="./img/signature.jpg" alt="#">
+                                    <div class="hideEffectBox">
+                                        <div class="hideUpEffect">
+                                            <strong>Boundaries</strong>
+                                            <div class="mal_img">
+                                                <div class="parallax_img">
+                                                    <img src="./img/signature.jpg" alt="#">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="main_about_link">
-                            <a href="#">About Us</a>
+                        <div class="main_about_link hideEffectBox">
+                            <div class="hideUpEffect">
+                                <a href="#" class="hideUpEffect">About Us</a>
+                            </div>
                         </div>
                         <div class="aniLineDeco"></div>
                     </div>
                 </div>
             </section>
-            <section id="main_music">
+            <section id="main_music" data-aos="fade-up" data-aos-duration="1700" data-aos-once="true">
                 <div class="container">
                     <div class="main_music_inner section_inner">
                         <div class="main_music_tit_area">
@@ -260,7 +284,7 @@
                     </div>
                 </div>
             </section>
-            <section id="main_news">
+            <section id="main_news" data-aos="fade-up" data-aos-duration="1700" data-aos-once="true">
                 <div class="container">
                     <div class="section_inner">
                         <div class="main_news_tit">
@@ -323,6 +347,15 @@
                     </div>
                 </div>
             </footer>
+            <div class="go_top">
+                <a href="#">
+                    <span class="hidden_text">move to top button</span>
+                    <div class="arrowBox">
+                        <div class="arrow"></div>
+                        <div class="arrow"></div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </body>
