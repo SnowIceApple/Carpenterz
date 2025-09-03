@@ -2,9 +2,10 @@ $(document).ready(function(){
 
     AOS.init();
 
-    const lenis = new Lenis({
+    var lenis = new Lenis({
         duration: 2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        prevent: (node) => node.id === 'mNavScroll',
     });
 
     function raf(time) {
@@ -15,6 +16,7 @@ $(document).ready(function(){
     requestAnimationFrame(raf);
 
 lenis.on('scroll', (e) => {
+
     var scrollPos = e.scroll;
     var allHeight = e.limit;
     var nowScroll = allHeight - scrollPos;
@@ -23,14 +25,15 @@ lenis.on('scroll', (e) => {
 
     // console.log(nowScroll, allHeight, ftPos);
 
-    if($(window).outerWidth() < 1040){
+    if($(window).outerWidth() < 1024){
         $('.go_top').css('bottom', 40 + 'px');
     }
 
-    if($(window).outerWidth() >= 1040 && nowScroll < ftHeight){
+    if($(window).outerWidth() >= 1024 && nowScroll < ftHeight){
         $('.go_top').addClass('pos_abs');
         $('.go_top').css('bottom', ftPos + 'px');
     }
+
     else{
         $('.go_top').removeClass('pos_abs');
         $('.go_top').css('bottom', 40 + 'px');
@@ -38,17 +41,34 @@ lenis.on('scroll', (e) => {
 
     $('window').on('resize', function(){
 
-        if($(window).outerWidth() < 1040){
+        if($(window).outerWidth() < 1024){
             $('.go_top').css('bottom', 40 + 'px');
         }
 
-        if($(window).outerWidth() >= 1040 && nowScroll < ftHeight){
+        if($(window).outerWidth() >= 1024 && nowScroll < ftHeight){
             $('.go_top').addClass('pos_abs');
             $('.go_top').css('bottom', ftPos + 'px');
         }
     });
+});
 
+$('.mobile_nav_btn a').on('click', function(e){
+    e.preventDefault();
+    $('.mobile_nav_btn, .mobile_nav_box').toggleClass('active');
+    $('body').toggleClass('mobileNavActive');
+    // if($('body').hasClass('mobileNavActive')){
+    //     lenis.stop();
+    // }
+    // else{
+    //     lenis.start();
+    // }
+});
 
+$(window).on('resize', function(){
+    if($(window).outerWidth() > 1024){
+        $('.mobile_nav_btn, .mobile_nav_box').removeClass('active');
+        $('body').removeClass('mobileNavActive');
+    }
 });
 
     $('.go_top a').on('click', function(){
@@ -66,23 +86,22 @@ lenis.on('scroll', (e) => {
     });
 
     const swiper1 = new Swiper('.main_slide', {
-    direction: 'horizontal',
-    loop: true,
-    speed: 1500,
-    autoplay: {
-        duration: 2500,
-        disableOnInteration: false,
-    },
+        direction: 'horizontal',
+        loop: true,
+        speed: 1500,
+        autoplay: {
+            duration: 2500,
+            disableOnInteration: false,
+        },
 
-    pagination: {
-        el: '.main-slide-pagination',
-        clickable: true,
-    },
+        pagination: {
+            el: '.main-slide-pagination',
+            clickable: true,
+        },
     });
 
     gsap.registerPlugin(ScrollTrigger);
     
-
     gsap.to('.visual_deco',{
         opacity: 0.6,
         scrollTrigger: {
@@ -113,7 +132,7 @@ lenis.on('scroll', (e) => {
         });
     });
 
-    var lineUpEffectBox = document.querySelector('.main_about_list ul li:has(.lineUpEffect)');
+    var lineUpEffectBox = document.querySelector('.mal_txt');
     var lineUpEffectTxt = lineUpEffectBox.querySelectorAll('.lineUpTxt');
 
         gsap.to(lineUpEffectTxt, {
@@ -169,11 +188,36 @@ $(window).on('scroll', function(){
       if($(window).scrollTop() > 0){
         $('.go_top').addClass('active');
       }
+
       else{
         $('.go_top').removeClass('active');
       }
 
-    
     });
+
+    function activeLineAniMargin(){
+
+        var lineUpHeight = $('.mal_txt').height();
+
+        if($(window).width() <= 1024){
+            $('.main_about_list').css({
+                'margin-bottom' : lineUpHeight + 50 + 'px',
+            });
+        }
+
+        else{
+            $('.main_about_list').css({
+                'margin-bottom' : 0,
+            });
+        }
+    }
+
+    activeLineAniMargin();
+
+    $(window).on('resize', function(){
+        activeLineAniMargin();
+    });
+
+    window.addEventListener("resize", ScrollTrigger.refresh());
 
 });

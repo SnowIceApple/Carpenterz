@@ -1,0 +1,160 @@
+
+@media screen and (max-width: 1024px){
+    
+    #nav{
+        display: none;
+    }
+
+    .mobile_nav_btn{
+        display: block;
+    }
+
+    .mobileNavActive .mobile_nav_box{
+        visibility: visible;
+        top: 0;
+        transition-delay: 0.1s;
+    }
+
+    /* main_about */
+
+    .main_about_list{
+        position: relative;
+        padding-bottom: 3rem;
+    }
+
+    .main_about_list > ul > li{
+        line-height: 1.35;
+    }
+
+    .main_about_list > ul > li:nth-child(2){
+        justify-content: flex-end;
+    }
+
+    .mal_txt{
+        position: absolute;
+        left: 0;
+        top: 100%;
+    }
+
+    .main_about_list > ul > li p{
+        margin-left: 0;
+        font-size: max(2.7vw, 1.25rem);
+        width: auto;
+        line-height: 1.4;
+    }
+
+    .main_about_list ul li p br{
+        line-height: 1;
+    }
+
+    .main_about_list ul li p .lineUpTxtBox:first-child .lineUpTxt{
+        text-align: left;
+    }
+
+    .mal_img{
+        width: 36.621vw;
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    
+    .main_about_list > ul > li:nth-child(3){
+        justify-content: space-between;
+    }
+
+    .main_about_list > ul > li:nth-child(3) .hideEffectBox{
+        width: 100%;
+    }
+
+    .main_about_list > ul > li:nth-child(3) .hideUpEffect{
+        justify-content: space-between;
+    }
+
+    .main_about_list > ul > li strong{
+        font-size: 8.464vw;
+    }
+
+    .mal_img{
+        width: 33.854vw;
+    }
+
+    .main_music_inner{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main_music_tit_area{
+        padding: 0 0 2.813rem 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .main_music_tit_area .aniLineDeco.type2{
+        display: none;
+    }
+
+    .main_music_list li.wide .ml_img{
+        height: 53.385vw;
+    }
+
+    .main_music_list li .ml_img{
+        height: 45.573vw;
+    }
+
+    .main_music_list li:not(.wide) .aniLineDeco{
+        height: 45.573vw;
+    }
+}
+
+@media screen and (max-width: 544px){
+
+    .mn_floor1{
+        gap: 0.938rem 0;
+    }
+
+    .main_about_list > ul > li strong{
+        font-size: 9.191vw;
+    }
+
+    .mal_img{
+        width: 56.985vw;
+        margin: 0 auto;
+    }
+
+    .main_music_list li{
+        width: 100%;
+    }
+
+    .main_music_list li:nth-child(even){
+        padding-right: 0;
+    }
+
+    .main_music_list li:nth-child(odd):not(.wide){
+        padding-left: 0;
+    }
+
+    .main_music_list li .ml_img{
+        height: calc(100vw - 45px) !important;
+    }
+
+    .main_music_list li .aniLineDeco{
+        display: none !important;
+    }
+
+    .main_news_tit{
+        flex-direction: column;
+        gap: 1.563rem 0;
+    }
+
+    .main_news_list > li{
+        width: 100%;
+    }
+
+    .main_news_list > li .ml_img{
+        width: 100%;
+        padding-top: 56.25%;
+    }
+    
+}
