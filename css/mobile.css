@@ -59,6 +59,9 @@
 
 @media screen and (max-width: 768px){
 
+    .header_inner{
+        height: 4.063rem;
+    }
     
     .main_about_list > ul > li:nth-child(3){
         justify-content: space-between;

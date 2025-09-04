@@ -26,6 +26,18 @@ body{
     margin: 0 auto;
 }
 
+/* scrollbar */
+
+html::-webkit-scrollbar{
+    width: 4px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+html::-webkit-scrollbar-thumb{
+    width: 100%;
+    background: #cb0a0a;
+}
+
 /* section */
 
 section::after{
