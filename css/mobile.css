@@ -61,6 +61,7 @@
 
     .header_inner{
         height: 4.063rem;
+        flex-wrap: nowrap;
     }
     
     .main_about_list > ul > li:nth-child(3){
@@ -117,8 +118,13 @@
         gap: 0.938rem 0;
     }
 
+    .rotateStarDeco img{
+        width: max(5.422vw, 40px);
+    }
+
     .main_about_list > ul > li strong{
-        font-size: 9.191vw;
+        width: 100%;
+        font-size: max(9.191vw, 40px);
     }
 
     .mal_img{
