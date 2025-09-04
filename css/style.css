@@ -28,12 +28,12 @@ body{
 
 /* scrollbar */
 
-html::-webkit-scrollbar{
+*::-webkit-scrollbar{
     width: 4px;
     background: rgba(0, 0, 0, 0.2);
 }
 
-html::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb{
     width: 100%;
     background: #cb0a0a;
 }
